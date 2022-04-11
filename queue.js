@@ -1,5 +1,5 @@
 /** Node: node for a queue. */
-const LinkedList = require("../dsa_linked_list/linked-list");
+const LinkedList = require("../dsa-arrays-linked-lists/linked-list");
 
 
 class Node {
@@ -17,11 +17,19 @@ class Node {
 class Queue {
   first = null;
   last = null;
-  size = 0;
+  // size = 0;
+  size = _ll.length;
+
+  constructor()  { 
+    this._ll = new LinkedList(); 
+  }
 
   /** enqueue(val): add new value to end of the queue. Returns undefined. */
 
   enqueue(val) {
+    const newNode = new Node(val);
+    this._ll.push(newNode);
+    size++;
 
   }
 
