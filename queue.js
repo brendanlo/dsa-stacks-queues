@@ -1,4 +1,6 @@
 /** Node: node for a queue. */
+const LinkedList = require("../dsa_linked_list/linked-list");
+
 
 class Node {
   val = null;
