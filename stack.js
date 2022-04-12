@@ -16,10 +16,19 @@ class Stack {
   top = null;
   size = 0;
 
+  constructor(val=[])  { 
+    this._array = val;
+    this.size = this._array.length;
+    this.top = this._array[this.size-1];
+  }
   /** push(val): add new value to the top of the stack. Returns undefined. */
 
   push(val) {
-
+    const newNode = new Node(val);
+    this.size++;
+    newNode.next = this._array[this.size-2] || null;
+    this._array.push(newNode);
+    this.top = this._array[this.size-1];
   }
 
   /** pop(): remove the node from the top of the stack
