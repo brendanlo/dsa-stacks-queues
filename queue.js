@@ -17,22 +17,26 @@ class Node {
 class Queue {
   first = null;
   last = null;
-  // size = 0;
-  size = _ll.length;
+  size = 0;
 
-  constructor()  { 
-    this._ll = new LinkedList(); 
+  constructor(val=[])  { 
+    this._ll = new LinkedList(val); 
+    
+    this.first = this._ll.head;
+    this.last = this._ll.tail;
+    this.size = this._ll.length;
   }
 
   /** enqueue(val): add new value to end of the queue. Returns undefined. */
 
   enqueue(val) {
-    const newNode = new Node(val);
-    this._ll.push(newNode);
-    size++;
-
+    this._ll.push(val);
+    
+    this.first = this._ll.head;
+    this.last = this._ll.tail;
+    this.size = this._ll.length;
+    
   }
-
   /** dequeue(): remove the node from the start of the queue
    * and return its value. Should throw an error if the queue is empty. */
 
